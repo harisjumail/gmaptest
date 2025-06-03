@@ -17,7 +17,7 @@ map-project
 └── README.md             # Documentation for the project
 ```
 
-#Logic or Algorithm Used
+## Logic Algorithm for the Project
 1.	Input Validation:
    The backend validates the user prompt to ensure it is related to food or places to go using a predefined list of keywords.
 2.	LLM Integration:
