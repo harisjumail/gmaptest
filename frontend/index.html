@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map Viewer</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="dark-mode">
+  <input type="text" id="prompt" placeholder="Where do you want to go?" />
+  <button onclick="searchPlace()">Search</button>
+
+  <div id="loading" style="display: none;">Loading...</div>
+
+  <h3 id="place-name"></h3>
+  <iframe id="map-frame" width="600" height="450" style="border:0;" loading="lazy"></iframe>
+  <br />
+  <a id="directions-link" target="_blank">Get Directions</a>
+
+  <script>
+    async function searchPlace() {
+      const prompt = document.getElementById('prompt').value;
+      const loadingElement = document.getElementById('loading');
+      const placeNameElement = document.getElementById('place-name');
+      const mapFrameElement = document.getElementById('map-frame');
+
+ 
+      placeNameElement.textContent = '';
+      mapFrameElement.src = ''; 
+      loadingElement.style.display = 'block'; 
+      loadingElement.textContent = 'Loading...';
+
+      try {
+        const res = await fetch('http://localhost:4000/search', { 
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt })
+        });
+        const data = await res.json();
+        if (data.error) {
+          loadingElement.textContent = data.error; 
+          return;
+        }
+
+     
+        placeNameElement.textContent = data.placeName;
+        mapFrameElement.src = data.mapsEmbedUrl; 
+        document.getElementById('directions-link').href = data.directionsUrl; 
+      } catch (error) {
+        loadingElement.textContent = 'An error occurred while fetching data.';
+        console.error(error);
+      } finally {
+        setTimeout(() => {
+          loadingElement.style.display = 'none'; 
+        }, 3000); 
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+body.light-mode {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4; 
+    color: #333; 
+  }
+  
+
+  body.dark-mode {
+    background-color: #1e1e2f; 
+    color: #ffffff;/
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+ 
+  input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #444;
+    border-radius: 5px;
+  }
+  
+  body.light-mode input[type="text"] {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  
+  body.dark-mode input[type="text"] {
+    background-color: #2e2e3f;
+    color: #ffffff;
+    border: 1px solid #444;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  body.light-mode button {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  body.light-mode button:hover {
+    background-color: #218838;
+  }
+  
+  body.dark-mode button {
+    background-color: #3a3a4f;
+    color: #ffffff;
+  }
+  
+  body.dark-mode button:hover {
+    background-color: #4a4a6f;
+  }
+
+  h3 {
+    margin: 20px 0;
+    font-size: 24px;
+  }
+  
+  body.light-mode h3 {
+    color: #333;
+  }
+  
+  body.dark-mode h3 {
+    color: #ffffff;
+  }
+
+  iframe {
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  body.light-mode iframe {
+    border: 1px solid #ccc;
+  }
+  
+  body.dark-mode iframe {
+    border: 1px solid #444;
+  }
+  
+
+  a {
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  body.light-mode a {
+    color: #007bff;
+  }
+  
+  body.light-mode a:hover {
+    text-decoration: underline;
+  }
+  
+  body.dark-mode a {
+    color: #4a90e2;
+  }
+  
+  body.dark-mode a:hover {
+    text-decoration: underline;
+  }
+  
+  #loading {
+    font-size: 18px;
+    margin: 20px 0;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.light-mode #loading {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  
+  body.dark-mode #loading {
+    background-color: #3a3a4f;
+    color: #ffffff;
+    border: 1px solid #444;
+  }
