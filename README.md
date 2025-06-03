@@ -17,6 +17,19 @@ map-project
 └── README.md             # Documentation for the project
 ```
 
+#Logic or Algorithm Used
+1.	Input Validation:
+   The backend validates the user prompt to ensure it is related to food or places to go using a predefined list of keywords.
+2.	LLM Integration:
+   The backend sends the validated prompt to the local LLM to generate a concise place suggestion.
+3.	Google Places API Query:
+   The backend queries the Google Places API using the place suggestion to retrieve detailed information about the place.
+4.	Response Construction:
+   The backend constructs a response containing the place name, embedded map URL, and directions link.
+5.	Frontend Display:
+   The frontend displays the place name, embedded map, and directions link.
+
+
 ## Setup Instructions
 
 ### Frontend
